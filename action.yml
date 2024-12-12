@@ -9,9 +9,8 @@ runs:
   using: composite
   steps:
   - name: Install the latest version of uv
-    uses: astral-sh/setup-uv@v3
+    uses: astral-sh/setup-uv@v5
     with:
-      enable-cache: true
       cache-dependency-glob: '.pre-commit-config.yaml'
   - run: uv run --isolated --no-sync true && echo "pythonLocation=$(uv python find)" >>$GITHUB_ENV
     shell: bash
